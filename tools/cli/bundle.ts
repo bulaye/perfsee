@@ -18,6 +18,7 @@ import { Option } from 'clipanion'
 import inquirer, { Question } from 'inquirer'
 import { first } from 'lodash'
 import webpack from 'webpack'
+import WebpackDynamicPublicPathPlugin from 'webpack-dynamic-public-path'
 
 import { getPackage, PackageName, packagePath, pathToRoot } from '../utils'
 import { getFrontendConfig } from '../webpack/frontend-config'
@@ -54,10 +55,13 @@ const webpackConfigs: { [index: string]: webpack.Configuration } = {
     entry: {
       main: packagePath('@perfsee/bundle-report', 'src', 'static.tsx'),
     },
-    devtool: 'inline-cheap-module-source-map',
+    // devtool: 'inline-cheap-module-source-map',
+    devtool: false,
     output: {
       path: packagePath('@perfsee/plugin-utils', 'public'),
-      filename: '[name].js',
+      // 本地report 无需hash
+      filename: process.env.LOCAL_REPORT ? '[name].js' : '[name].[contenthash].js',
+      publicPath: process.env.LOCAL_REPORT ? '/' : '/paas/frontend/analyzer/static/',
     },
     optimization: {
       splitChunks: false,

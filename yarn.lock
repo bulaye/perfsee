@@ -20358,6 +20358,7 @@ __metadata:
     webpack: ^5.73.0
     webpack-cli: ^4.10.0
     webpack-dev-server: ^4.9.3
+    webpack-dynamic-public-path: ^1.0.8
     webpack-merge: ^5.8.0
     webpack-node-externals: ^3.0.0
     why-is-node-running: ^2.2.2
@@ -26479,6 +26480,13 @@ __metadata:
   bin:
     webpack-dev-server: bin/webpack-dev-server.js
   checksum: 845f2cc8e79a348ee7b17080eef9b332c675540888e0bc97ec6b62174882aca7995eaa7a3f49cfdd9af186da22f2f335fd03cb3c55cd49e387c8a3dc59700d66
+  languageName: node
+  linkType: hard
+
+"webpack-dynamic-public-path@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "webpack-dynamic-public-path@npm:1.0.8"
+  checksum: 5ad5fe52f44c7514d2564374521d35ce025f55f8b8a01f881aeb869ecee1a1463daed6320289c7e99406385a03e22c050a4f35c47e90d43db4830abde9d6e4f8
   languageName: node
   linkType: hard
 
