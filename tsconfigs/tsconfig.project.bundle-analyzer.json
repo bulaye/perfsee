@@ -1,0 +1,12 @@
+// AUTO GENERATED
+{
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [],
+  "references": [
+    {
+      "path": "../packages/bundle-analyzer"
+    }
+  ]
+}

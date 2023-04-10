@@ -76,30 +76,30 @@ const ReportContainer = styled('div')({
   margin: '0 auto',
 })
 
-// const ContentContainer = styled('div')({
-//   margin: '0 48px',
-// })
+const ContentContainer = styled('div')({
+  margin: '0 48px',
+})
 
 function BundleReportContainer() {
   const bundleDiff = diffBundleResult(window.bundleReport, window.baseline)
-  // const contentLink = `${prefix}/${window.artifact.id}/content`
+  const contentLink = `${prefix}/${window.artifact.id}/content`
   return (
-    // <ReportContainer>
-    //   <BundleReport artifact={window.artifact} diff={bundleDiff} contentLink={contentLink} />
-    // </ReportContainer>
     <ReportContainer>
-      <BundleReport artifact={window.artifact} diff={bundleDiff} />
+      <BundleReport artifact={window.artifact} diff={bundleDiff} contentLink={contentLink} />
     </ReportContainer>
+    // <ReportContainer>
+    //   <BundleReport artifact={window.artifact} diff={bundleDiff} />
+    // </ReportContainer>
   )
 }
 
-// function BundleContentContainer() {
-//   return (
-//     <ContentContainer>
-//       <BundleContent content={window.bundleContent} />
-//     </ContentContainer>
-//   )
-// }
+function BundleContentContainer() {
+  return (
+    <ContentContainer>
+      <BundleContent content={window.bundleContent} />
+    </ContentContainer>
+  )
+}
 
 function App() {
   const theme = useTheme()
@@ -114,13 +114,13 @@ function App() {
     )
   }, [theme])
   const reportPath = `${prefix}/:id`
-  // const contentPath = `${prefix}/:id/content`
+  const contentPath = `${prefix}/:id/content`
   return (
     <MDXProvider components={MDXComponents}>
       <BrowserRouter>
         <Switch>
           <Route path={reportPath} exact={true} component={BundleReportContainer} />
-          {/* <Route path={contentPath} exact={true} component={BundleContentContainer} /> */}
+          <Route path={contentPath} exact={true} component={BundleContentContainer} />
         </Switch>
       </BrowserRouter>
     </MDXProvider>

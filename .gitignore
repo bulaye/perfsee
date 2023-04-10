@@ -196,3 +196,5 @@ temp/
 !.yarn/sdks
 !.yarn/versions
 perfsee.private-key.pem
+
+_dist

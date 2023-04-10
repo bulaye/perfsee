@@ -18,7 +18,6 @@ import { Option } from 'clipanion'
 import inquirer, { Question } from 'inquirer'
 import { first } from 'lodash'
 import webpack from 'webpack'
-import WebpackDynamicPublicPathPlugin from 'webpack-dynamic-public-path'
 
 import { getPackage, PackageName, packagePath, pathToRoot } from '../utils'
 import { getFrontendConfig } from '../webpack/frontend-config'
